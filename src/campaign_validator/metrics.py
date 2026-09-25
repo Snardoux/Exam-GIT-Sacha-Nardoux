@@ -1,5 +1,3 @@
-
-
 def click_through_rate(clicks: int, impressions: int) -> float:
     if clicks < 0:
         raise ValueError("clicks must not be negative")
@@ -13,4 +11,6 @@ def count_campaign_tags(tags: list[str]) -> int:
 
 
 def normalize_campaign_name(CampaignName: str | None) -> str:
+    if CampaignName is None:
+        return ""
     return CampaignName.strip()
