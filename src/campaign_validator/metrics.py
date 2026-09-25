@@ -11,4 +11,6 @@ def count_campaign_tags(tags: list[str]) -> int:
 
 
 def normalize_campaign_name(CampaignName: str | None) -> str:
+    if CampaignName is None:
+        return ""
     return CampaignName.strip()
