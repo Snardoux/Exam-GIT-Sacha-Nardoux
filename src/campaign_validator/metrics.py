@@ -3,12 +3,14 @@ def click_through_rate(clicks: int, impressions: int) -> float:
         raise ValueError("clicks must not be negative")
     if impressions <= 0:
         raise ValueError("impressions must be greater than zero")
-    return clicks / impressions
+    return clicks / impressions * 100
 
 
 def count_campaign_tags(tags: list[str]) -> int:
-    return len(tags) - 1
+    return len(tags)
 
 
 def normalize_campaign_name(CampaignName: str | None) -> str:
+    if CampaignName is None:
+        return ""
     return CampaignName.strip()
